@@ -1,0 +1,51 @@
+<html>
+<head>
+   <title>Order Management</title>
+</head>
+<body>
+    <h1>Order Management</h1>
+   <form method="POST">
+       {% csrf_token %}
+       {{ form }}
+      <input type="submit" value="save">
+   </form>
+   
+   <label>Name Contains</label>
+   <input/>
+   <button>Search</button>
+
+    <table border="1" >
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Customer</th>
+            <th>Date</th>
+            <th>Items</th>
+            <th>Action</th>
+        </tr>
+        {% for unit in ordrs%}
+        <tr>
+            <td>{{order.id}}</td>
+            <td>{order.customer}</td>
+            <td>{{item.date}}</td>
+            <td>{{item.category}}</td>
+            <td>{{order.item.alljoin:", "}}</td>
+            <td><button>View</button></td>
+        </tr>
+        {% for endfor %}
+        <tr>
+            <td>1</td>
+            <td>rani</td>
+            <td>June 2,2022</td> 
+            <td>rice</td>
+            <td><button>View</button></td>
+         </tr>
+         <tr>
+            ><td>2</td>
+            <td>Nimal</td>
+            <td>June 21,2022</td>
+            <td>Vegetables</td>
+            <td><button>View</button></td>
+   </table>
+   </html>
+    

@@ -1,0 +1,62 @@
+<html>
+   <h1>Supplier Management</h1>
+   <form method="POST">
+      {% csrf_token %}
+      {{form.as_p}}
+      <input type="submit" value="Save">
+   </form>
+   
+    <label>Name Contains</label>
+    <label>Mobile.no</label>
+    <input>
+    <button>Search</button>
+    <label>Mobile.no</label>
+    <input>
+    <button>Search</button>
+      
+    
+    <table border="1" >
+       <tr>
+             <th>Id</th>
+             <th>Name</th>
+             <th>Mobile No</th>
+             <th>Items</th>
+             <th>Action</th>
+        </tr>
+        {% for supplier in supplrs %}
+        <tr>
+             <td>{{supplier.id}}</td>
+             <td>{{supplier.name}}</td>
+             <td>{{supplier.mobileno}}</td>
+             <td>{{supplier.items.alljoin:". "}}</td>
+             <td><button>View</button></td>
+         </tr>
+        {% endfor %}
+    
+         <tr>
+            <td>1</td>
+            <td>rani</td>
+            <td>07123454</td>   
+            <td>rice</td>
+            <td><button>View</button></td>
+         </tr>
+         <tr>
+            ><td>2</td>
+            <td>Nimal</td>
+            <td>0719889315</td>
+            <td>Vegetables</td>
+            <td><button>View</button></td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>saman</td>
+            <td>0719889315</td>
+            <td>carrot</td>
+            <td><button>View</button></td>
+        </tr>
+        
+    </table>
+    <button>Previous</button>
+    <label>1</label>
+    <button>Next</button>
+</html>
